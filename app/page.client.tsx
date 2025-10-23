@@ -265,6 +265,7 @@ export default function Page() {
           return Promise.resolve();
         }}
         options={options}
+        className="hidden sm:block"
       />
 
       <div className="flex flex-col justify-center items-center h-full pt-56 sm:pt-0 relative z-10">

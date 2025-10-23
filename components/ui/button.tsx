@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -49,11 +50,27 @@ function Button({
   const Comp = asChild ? Slot : "button";
 
   return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
+    <div className="flex justify-center">
+      <div className="relative flex justify-center w-[155px] h-[60px] sm:w-[280px] sm:h-[75px]">
+        <Image
+          priority
+          src="/assets/btn.svg"
+          alt="Button Background"
+          width={250}
+          height={75}
+          // fill
+        />
+
+        <Comp
+          data-slot="button"
+          className={cn(
+            "absolute top-1/2 left-1/2 -translate-1/2",
+            className,
+          )}
+          {...props}
+        />
+      </div>
+    </div>
   );
 }
 

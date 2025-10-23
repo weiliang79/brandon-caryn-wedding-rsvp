@@ -20,9 +20,19 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { ISourceOptions } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 import { MouseParticles } from "@/components/mouse-particles";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function Page() {
   const [init, setInit] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const played = useRef<boolean>(false);
 
@@ -32,7 +42,7 @@ export default function Page() {
       played.current = true;
 
       if (audioRef.current == null) return;
-      
+
       const mql = window.matchMedia(`(max-width: 639px)`);
       if (mql.matches) {
         audioRef.current.src = "/assets/bgm-mobile.mp3";
@@ -242,9 +252,10 @@ export default function Page() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
       const result = await submitAction.executeAsync(value);
-      console.log(result);
+      if (result.data?.success) {
+        setOpen(true);
+      }
     },
   });
 
@@ -267,6 +278,24 @@ export default function Page() {
         options={options}
         className="hidden sm:block"
       />
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="sm:text-center">
+              RSVP Completed!
+            </DialogTitle>
+            <DialogDescription className="sm:text-center">
+              Mark your calendar for 31 January 2026 <br /> We&apos;ll see you
+              at Iconic Marjorie Hotel!
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter className="sm:justify-center">
+            <DialogClose>Close</DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       <div className="flex flex-col justify-center items-center h-full pt-56 sm:pt-0 relative z-10">
         <Image

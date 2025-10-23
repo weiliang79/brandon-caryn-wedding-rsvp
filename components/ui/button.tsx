@@ -50,7 +50,7 @@ function Button({
   const Comp = asChild ? Slot : "button";
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center cursor-custom">
       <div className="relative flex justify-center w-[155px] h-[60px] sm:w-[280px] sm:h-[75px]">
         <Image
           priority
@@ -64,7 +64,7 @@ function Button({
         <Comp
           data-slot="button"
           className={cn(
-            "absolute top-1/2 left-1/2 -translate-1/2",
+            "absolute top-1/2 left-1/2 -translate-1/2 cursor-custom",
             className,
           )}
           {...props}

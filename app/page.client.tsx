@@ -254,6 +254,7 @@ export default function Page() {
     onSubmit: async ({ value }) => {
       const result = await submitAction.executeAsync(value);
       if (result.data?.success) {
+        form.reset();
         setOpen(true);
       }
     },

@@ -534,7 +534,7 @@ export default function Page() {
                 <Button
                   type="submit"
                   form="rsvp-form"
-                  className="flex gap-2 pt-2 w-[85px] h-[14px] sm:w-[140px] pl-1 sm:pl-0.5"
+                  className="flex gap-2 w-[85px] h-[14px] sm:w-[140px] pl-1 sm:pl-0.5"
                 >
                   <p className="font-gilda-display text-[11px] sm:text-[22px] leading-0">
                     Submit

@@ -300,7 +300,7 @@ export default function Page() {
 
       <div className="flex flex-col justify-center items-center h-full pt-56 sm:pt-0 relative z-10">
         <Image
-          src="/assets/logo.svg"
+          src="/assets/logo-desktop.svg"
           alt="Logo"
           width={147}
           height={117}
@@ -534,13 +534,13 @@ export default function Page() {
                 <Button
                   type="submit"
                   form="rsvp-form"
-                  className="flex gap-2 pt-2 w-[100px] h-[14px] sm:w-[140px] pl-1 sm:pl-0.5"
+                  className="flex gap-2 pt-2 w-[85px] h-[14px] sm:w-[140px] pl-1 sm:pl-0.5"
                 >
-                  <p className="font-gilda-display text-[14px] sm:text-[22px] leading-0">
+                  <p className="font-gilda-display text-[11px] sm:text-[22px] leading-0">
                     Submit
                   </p>
 
-                  <p className="font-san-ji text-[12px] sm:text-[16px] leading-0">
+                  <p className="font-san-ji text-[9px] sm:text-[16px] leading-0">
                     点击提交
                   </p>
                 </Button>
@@ -550,11 +550,11 @@ export default function Page() {
         </form>
 
         <Image
-          src="/assets/logo.svg"
+          src="/assets/logo-mobile.svg"
           alt="Logo"
-          width={100}
-          height={100}
-          className="sm:hidden block"
+          width={80}
+          height={80}
+          className="sm:hidden block mt-4"
         />
       </div>
     </>

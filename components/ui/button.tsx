@@ -58,6 +58,17 @@ function Button({
           alt="Button Background"
           width={250}
           height={75}
+          className="hidden sm:block"
+          // fill
+        />
+
+        <Image
+          priority
+          src="/assets/btn.svg"
+          alt="Button Background"
+          width={115}
+          height={75}
+          className="block sm:hidden"
           // fill
         />
 

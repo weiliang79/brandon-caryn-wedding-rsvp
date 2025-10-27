@@ -9,7 +9,8 @@ export const submitRsvp = actionClient
   .action(async ({ parsedInput }) => {
     const supabase = await createClient();
 
-    const { error } = await supabase.from("guests_dev").insert({
+    const tableName = process.env.DB_GUEST_TABLE || "guests_dev";
+    const { error } = await supabase.from(tableName).insert({
       ...parsedInput,
     });
 

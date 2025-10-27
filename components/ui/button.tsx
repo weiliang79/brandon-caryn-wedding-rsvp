@@ -50,21 +50,32 @@ function Button({
   const Comp = asChild ? Slot : "button";
 
   return (
-    <div className="flex justify-center">
-      <div className="relative flex justify-center w-[155px] h-[60px] sm:w-[280px] sm:h-[75px]">
+    <div className="flex justify-center cursor-custom">
+      <div className="relative flex justify-center w-[155px] h-[40px] sm:w-[280px] sm:h-[75px]">
         <Image
           priority
           src="/assets/btn.svg"
           alt="Button Background"
           width={250}
           height={75}
+          className="hidden sm:block"
+          // fill
+        />
+
+        <Image
+          priority
+          src="/assets/btn.svg"
+          alt="Button Background"
+          width={115}
+          height={60}
+          className="block sm:hidden"
           // fill
         />
 
         <Comp
           data-slot="button"
           className={cn(
-            "absolute top-1/2 left-1/2 -translate-1/2",
+            "absolute top-1/2 left-1/2 -translate-1/2 cursor-custom mt-2",
             className,
           )}
           {...props}

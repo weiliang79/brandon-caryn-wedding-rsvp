@@ -48,6 +48,8 @@
   --font-san-ji: var(--font-san-ji);
 
   --color-label: var(--label);
+
+  --cursor-custom: var(--cursor-custom);
 }
 
 :root {
@@ -85,6 +87,8 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   --label: #3C2415;
+
+  --cursor-custom: url("/assets/pointer.png"), auto;
 }
 
 .dark {
@@ -134,7 +138,7 @@
     background-repeat: no-repeat;
     background-position: center center;
 
-    cursor: url("/assets/pointer.png"), auto;
+    cursor: var(--cursor-custom);
   }
 
   @media (max-width: 640px) {
